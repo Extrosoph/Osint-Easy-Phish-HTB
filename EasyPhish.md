@@ -16,10 +16,10 @@ Based on understanding these key feature of an email security protocol we needed
 
 **Steps:**
 1. First we query using ('dig secure-startup.com') just to get the basic result and to check the spf records.
-  * Here we find the DNS server in the record which is 34.102.136.180 which is not very useful in this case.
+   * Here we find the DNS server in the record which is 34.102.136.180 which is not very useful in this case.
 2. Now we query using TXT record for all the text record of the domain using ('dig TXT secure-startup.com').
-  * Here we find part of the HTB flag which is 'HTB{RIP_SPF_Always_2nd' in the spf record under the ANSWER SECTION.
+   * Here we find part of the HTB flag which is 'HTB{RIP_SPF_Always_2nd' in the spf record under the ANSWER SECTION.
 3. After findind the first part of the flag we need to test the DMARC of the of the server using the same TXT to check the text record using ('dig TXT secure-startup.com _dmarc.secure-startup.com').
-  * Here we find the second part of the flag whihc is '_F1ddl3_2_DMARC}' in the DMARC record under the ANSWER SECTION.
+   * Here we find the second part of the flag whihc is '_F1ddl3_2_DMARC}' in the DMARC record under the ANSWER SECTION.
 
 Final Flag: HTB{RIP_SPF_Always_2nd_F1ddl3_2_DMARC
